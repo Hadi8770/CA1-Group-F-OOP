@@ -4,7 +4,6 @@
  */
 package hydratationtracker;
 import healthtrack.HealthTrackGUI;
-import sleeptracker.SleepTrackerGUI;
 import activitytracker.ActivityTrackerGUI;
 import hydratationtracker.HydratationTrackGUI;
 /**
@@ -169,17 +168,11 @@ public class HydratationTrackGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void amountFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_amountFieldActionPerformed
+    private void goActivityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goActivityActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_amountFieldActionPerformed
-
-    private void dateFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dateFieldActionPerformed
-
-    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-            
-    }//GEN-LAST:event_addButtonActionPerformed
+        new ActivityTrackerGUI().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_goActivityActionPerformed
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
         // TODO add your handling code here:
@@ -189,17 +182,23 @@ public class HydratationTrackGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_displayButtonActionPerformed
 
+    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
+
+    }//GEN-LAST:event_addButtonActionPerformed
+
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         // TODO add your handling code here:
         new HealthTrackGUI().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_backActionPerformed
 
-    private void goActivityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goActivityActionPerformed
+    private void amountFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_amountFieldActionPerformed
         // TODO add your handling code here:
-        new ActivityTrackerGUI().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_goActivityActionPerformed
+    }//GEN-LAST:event_amountFieldActionPerformed
+
+    private void dateFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dateFieldActionPerformed
 
     /**
      * @param args the command line arguments
