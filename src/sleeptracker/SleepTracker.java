@@ -13,6 +13,10 @@ public class SleepTracker {
     /**
      * @param args the command line arguments
      */
-    
+    public static void main(String[] args) {
+        // TODO code application logic here
+        SleepTrackerGUI myGUI = new SleepTrackerGUI();
+        myGUI.setVisible(true);
+    }
     
 }
