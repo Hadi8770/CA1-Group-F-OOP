@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hydratationtracker;
-
+import healthtrack.HealthTrackGUI;
+import activitytracker.ActivityTrackerGUI;
+import hydratationtracker.HydratationTrackGUI;
 /**
  *
  * @author uevor
