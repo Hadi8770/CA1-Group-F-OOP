@@ -15,8 +15,6 @@ public class ActivityTracker {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        ActivityTrackerGUI myGui = new ActivityTrackerGUI();
-        myGui.setVisible(true);
     }
     
 }
