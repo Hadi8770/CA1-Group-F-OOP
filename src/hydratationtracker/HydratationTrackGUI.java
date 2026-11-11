@@ -31,6 +31,7 @@ public class HydratationTrackGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         dateField = new javax.swing.JTextField();
         date = new javax.swing.JLabel();
@@ -44,6 +45,7 @@ public class HydratationTrackGUI extends javax.swing.JFrame {
         search = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         outputZone = new javax.swing.JTextArea();
+        goActivity = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -55,6 +57,8 @@ public class HydratationTrackGUI extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
+
+        jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,7 +75,7 @@ public class HydratationTrackGUI extends javax.swing.JFrame {
 
         title.setText("HYDRATATION TRACKER");
 
-        back.setText("Back");
+        back.setText("Back to menu");
         back.addActionListener(this::backActionPerformed);
 
         addButton.setText("Add");
@@ -89,6 +93,9 @@ public class HydratationTrackGUI extends javax.swing.JFrame {
         outputZone.setRows(5);
         jScrollPane2.setViewportView(outputZone);
 
+        goActivity.setText("Previusly Page");
+        goActivity.addActionListener(this::goActivityActionPerformed);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -98,24 +105,25 @@ public class HydratationTrackGUI extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(title)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(amountField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(amountW)
-                            .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dateField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(search)
                         .addGap(18, 18, 18)
                         .addComponent(displayButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                         .addComponent(addButton)
                         .addGap(18, 18, 18)
-                        .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(title)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(back))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(amountField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(amountW)
+                            .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dateField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(goActivity))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -141,8 +149,10 @@ public class HydratationTrackGUI extends javax.swing.JFrame {
                         .addComponent(delete)
                         .addComponent(displayButton)))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(goActivity)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -182,8 +192,16 @@ public class HydratationTrackGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_displayButtonActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
-        
+        // TODO add your handling code here:
+        new HealthTrackGUI().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_backActionPerformed
+
+    private void goActivityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goActivityActionPerformed
+        // TODO add your handling code here:
+        new ActivityTrackerGUI().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_goActivityActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,6 +237,8 @@ public class HydratationTrackGUI extends javax.swing.JFrame {
     private javax.swing.JTextField dateField;
     private javax.swing.JButton delete;
     private javax.swing.JButton displayButton;
+    private javax.swing.JButton goActivity;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
