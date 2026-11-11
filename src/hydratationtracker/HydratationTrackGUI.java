@@ -4,7 +4,6 @@
  */
 package hydratationtracker;
 import healthtrack.HealthTrackGUI;
-import sleeptracker.SleepTrackerGUI;
 import activitytracker.ActivityTrackerGUI;
 import hydratationtracker.HydratationTrackGUI;
 /**
@@ -32,6 +31,7 @@ public class HydratationTrackGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         dateField = new javax.swing.JTextField();
         date = new javax.swing.JLabel();
@@ -57,6 +57,8 @@ public class HydratationTrackGUI extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
+
+        jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,7 +93,7 @@ public class HydratationTrackGUI extends javax.swing.JFrame {
         outputZone.setRows(5);
         jScrollPane2.setViewportView(outputZone);
 
-        goActivity.setText("previusly page");
+        goActivity.setText("Previusly Page");
         goActivity.addActionListener(this::goActivityActionPerformed);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -149,8 +151,8 @@ public class HydratationTrackGUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(goActivity, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(goActivity)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -236,6 +238,7 @@ public class HydratationTrackGUI extends javax.swing.JFrame {
     private javax.swing.JButton delete;
     private javax.swing.JButton displayButton;
     private javax.swing.JButton goActivity;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
