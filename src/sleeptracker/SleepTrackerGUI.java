@@ -3,7 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package sleeptracker;
-
+import healthtrack.HealthTrackGUI;
+import sleeptracker.SleepTrackerGUI;
+import activitytracker.ActivityTrackerGUI;
+import hydratationtracker.HydratationTrackGUI;
 /**
  *
  * @author hadis
@@ -145,7 +148,14 @@ public class SleepTrackerGUI extends javax.swing.JFrame {
 
     private void ComfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComfirmActionPerformed
         // TODO add your handling code here:
+        String name = jTextField1.getText();
+        int age = Integer.parseInt(jTextField2.getText());
         
+        AgeGroup user = new AgeGroup(name, age);
+        
+        SleepRecommendation sleep = new SleepRecommendation(user.getAge());
+        
+        jLabel1.setText("Hello " + user.getName() + "! you need " + sleep.getSleepHours() + " hours of sleep per night.");
     }//GEN-LAST:event_ComfirmActionPerformed
 
     private void goActivityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goActivityActionPerformed
