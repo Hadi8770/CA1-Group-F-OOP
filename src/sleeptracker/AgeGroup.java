@@ -34,20 +34,23 @@ public class AgeGroup {
     }
     
     public String getAgeGroup(){
-        if(age <= 12){
+        if(age >= 6 && age<= 12){
             return "child";
         }
-        else if(age <= 17){
+        else if(age >= 13 && age<= 17){
             return "Teenager";
         }
-        else if(age <= 25){
+        else if(age >= 18 && age<= 25){
             return "Young adult";
         }
-        else if(age <= 64){
+        else if(age >= 26 && age<= 64){
             return "Adult";
         }
-        else{
+        else if(age >= 65){
             return "Older Adult";
+        }
+        else{
+            return "Please enter a valid age";
         }
     }
     
