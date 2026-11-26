@@ -13,6 +13,9 @@ import hydratationtracker.HydratationTrackGUI;
  * @author catha
  */
 public class ActivityTrackerGUI extends javax.swing.JFrame {
+
+    private ActivityRecord[] activityArray = new ActivityRecord[100];
+    private int currentIndex = 0;
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ActivityTrackerGUI.class.getName());
 
@@ -174,7 +177,34 @@ public class ActivityTrackerGUI extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+        String steps = jTextField1.getText();
+        String hours = jTextField2.getText();
+
+        String exercise = "";
+        if (jRadioButton1.isSelected()) {
+            exercise = "Walking";
+        } else if (jRadioButton2.isSelected()) {
+            exercise = "Running";
+        } else if (jRadioButton3.isSelected()) {
+            exercise = "Cycling";
+        }
+
+        ActivityRecord newRecord = new ActivityRecord(steps, hours, exercise);
+
+        if (currentIndex < activityArray.length) {
+            activityArray[currentIndex] = newRecord;
+            currentIndex++;
+        }
+
+        jTextArea1.setText("");
+        for (int i = 0; i < currentIndex; i++) {
+            jTextArea1.append(activityArray[i].getSummary());
+        }
+
+        jTextArea1.setCaretPosition(jTextArea1.getDocument().getLength());
+
+        jTextField1.setText("");
+        jTextField2.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -243,5 +273,7 @@ public class ActivityTrackerGUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
